@@ -38,6 +38,7 @@ import android.graphics.Typeface;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.grokkingandroid.sampleapp.samples.AddFriend;
 import com.grokkingandroid.sampleapp.samples.gcm.Constants.EventbusMessageType;
 import com.grokkingandroid.sampleapp.samples.gcm.Constants.State;
 
@@ -97,7 +98,7 @@ public class GcmDemoFragment extends DemoBaseFragment implements
          if (mState == State.REGISTERED) {
             mBtnRegister.setText(R.string.btn_unregister);
             mTxtRegId.setText(getRegId());
-            Log.i("test",getRegId());
+            Log.i("test", getRegId());
          }
          //mBtnMessage.setOnClickListener(this);
       }
@@ -169,6 +170,8 @@ public class GcmDemoFragment extends DemoBaseFragment implements
             break;
          case UNREGISTERED:
             registerDevice();
+             Intent intent = new Intent(getActivity(), AddFriend.class);
+             startActivity(intent);
             break;
          default:
             Log.e("grokkingandroid", "click event on register button while it should be deactiviated");

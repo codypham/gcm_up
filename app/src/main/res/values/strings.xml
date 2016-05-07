@@ -145,5 +145,7 @@
         </item>
     </string-array>
     <string name="title_activity_add_friend">AddFriend</string>
+    <string name="title_activity_home_page">HomePage</string>
+    <string name="title_activity_profile">Profile</string>
 
 </resources>

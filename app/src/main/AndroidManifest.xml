@@ -84,7 +84,13 @@
 
         <activity
             android:name="com.grokkingandroid.sampleapp.samples.AddFriend"
-            android:label="@string/title_activity_add_friend"></activity>
+            android:label="@string/title_activity_add_friend" />
+        <activity
+            android:name="com.grokkingandroid.sampleapp.samples.HomePage"
+            android:label="@string/title_activity_home_page" />
+        <activity
+            android:name="com.grokkingandroid.sampleapp.samples.Profile"
+            android:label="@string/title_activity_profile"></activity>
     </application>
 
 </manifest>

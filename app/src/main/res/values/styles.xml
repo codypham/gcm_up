@@ -44,6 +44,9 @@
     -->
     <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar"></style>
 
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <!-- Application theme. -->
     <style name="DemoAppTheme" parent="AppBaseTheme">
     </style>

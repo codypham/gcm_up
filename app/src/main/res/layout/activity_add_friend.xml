@@ -9,4 +9,61 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.grokkingandroid.sampleapp.samples.AddFriend">
 
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/coupletones_icon"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/id_label"
+        android:layout_centerHorizontal="true" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/reg_id"
+        android:hint="User ID"
+        android:gravity="center"
+        android:textColor="#9d4747"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter User ID"
+        android:id="@+id/id_label"
+        android:textSize="30dp"
+        android:textColor="#9d4747"
+        android:gravity="center"
+        android:layout_above="@+id/reg_id"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:id="@+id/add_id"
+        android:background="#ccb65d5d"
+        android:textColor="#ffffff"
+        android:layout_marginTop="10dp"
+        android:shadowColor="#ffffff"
+        android:layout_below="@+id/reg_id"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:id="@+id/view_map"
+        android:background="#ccb65d5d"
+        android:textColor="#ffffff"
+        android:layout_marginTop="10dp"
+        android:shadowColor="#ffffff"
+        android:layout_below="@+id/add_id"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
