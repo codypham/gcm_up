@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      Copyright (C) 2014 Wolfram Rittmeyer
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,14 +14,14 @@
      limitations under the License.
 -->
 <resources>
-    
+
     <!-- You have to substitute your keys here -->
     <!--z
         <string name="gcm_project_id">your_project_id</string>
     -->
     <!-- gcm demo -->
     <!-- general stuff -->
-    <string name="gcm_project_id">813916479990</string>
+    <string name="gcm_project_id">default-demo-app-c264b</string>
     <string name="gcm_demo_app_name">GCM Demo</string>
     <string name="gcm_demo_copyright">2014</string>
 
@@ -50,7 +49,7 @@
     <string name="btn_unregister">Unregister</string>
     <string name="btn_message">Send this message</string>
     <string name="select">Select</string>
-    <string name="user_name">User name</string>
+    <string name="user_name">User Name</string>
     <string name="txt_message_hint">Your message</string>
     <string name="txt_demo_header">GCM Demo</string>
     <string name="no_message">No message entered</string>
@@ -145,5 +144,6 @@
             ]]>
         </item>
     </string-array>
+    <string name="title_activity_add_friend">AddFriend</string>
 
 </resources>

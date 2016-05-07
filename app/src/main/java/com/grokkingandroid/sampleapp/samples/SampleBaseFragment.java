@@ -89,8 +89,8 @@ public abstract class SampleBaseFragment extends Fragment {
          linkContainer.invalidate();
       }
       else {
-         rootView.findViewById(R.id.container_demo_description).setVisibility(View.GONE);
-         rootView.findViewById(R.id.container_demo_blog_links).setVisibility(View.GONE);
+         //rootView.findViewById(R.id.container_demo_description).setVisibility(View.GONE);
+         //rootView.findViewById(R.id.container_demo_blog_links).setVisibility(View.GONE);
       }
       
       // delegate to subclass for content view
@@ -128,7 +128,7 @@ public abstract class SampleBaseFragment extends Fragment {
    
    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
       if (isFragmentWithInlineDescription()) {
-         menu.findItem(R.id.menu_description).setVisible(false);
+         //menu.findItem(R.id.menu_description).setVisible(false);
       }
       addFragmentSpecificMenu(menu, inflater);
    }

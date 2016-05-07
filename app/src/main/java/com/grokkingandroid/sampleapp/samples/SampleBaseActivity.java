@@ -43,6 +43,7 @@ public abstract class SampleBaseActivity extends ActionBarActivity {
    @Override
    protected void onCreate(Bundle icicle) {
       super.onCreate(icicle);
+       getSupportActionBar().hide();
    }
 
    @Override
@@ -72,13 +73,15 @@ public abstract class SampleBaseActivity extends ActionBarActivity {
                   new Intent(this, getSampleHomeActivity()));
          }
          return true;
-      } else if (itemId == R.id.about) {
+      }
+      /*else if (itemId == R.id.about) {
          showAboutDialog();
          return true;
-      } else if (itemId == R.id.menu_description) {
+      }
+      else if (itemId == R.id.menu_description) {
          showDescription();
          return true;
-      }
+      }*/
       return super.onOptionsItemSelected(item);
    }
 

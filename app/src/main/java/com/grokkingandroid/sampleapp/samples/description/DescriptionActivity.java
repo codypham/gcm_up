@@ -62,7 +62,7 @@ public class DescriptionActivity extends SampleBaseActivity {
    @Override
    public boolean onCreateOptionsMenu(Menu menu) {
       boolean res = super.onCreateOptionsMenu(menu);
-      menu.findItem(R.id.menu_description).setVisible(false);
+      //menu.findItem(R.id.menu_description).setVisible(false);
       return res;
    }
 

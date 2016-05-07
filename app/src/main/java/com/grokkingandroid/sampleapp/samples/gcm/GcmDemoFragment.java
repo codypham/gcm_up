@@ -31,7 +31,10 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.graphics.Typeface;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -71,13 +74,24 @@ public class GcmDemoFragment extends DemoBaseFragment implements
       mState = getCurrState();
 
       View root = inflater.inflate(R.layout.container_content_gcm_demo, container, true);
+
+       Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Montserrat-Regular.otf");
+       TextView title = (TextView) root.findViewById(R.id.title);
+       Button select = (Button) root.findViewById(R.id.btn_select_account);
+       Button register = (Button) root.findViewById(R.id.btn_register);
+       EditText account = (EditText) root.findViewById(R.id.txt_user_account);
+       if(title != null) title.setTypeface(font);
+       if(select != null) select.setTypeface(font);
+       if(register != null) register.setTypeface(font);
+       if(account != null) account.setTypeface(font);
+
       mBtnRegister = (Button) root.findViewById(R.id.btn_register);
       mBtnRegister.setOnClickListener(this);
 
       mTxtRegId = (TextView)root.findViewById(R.id.txt_reg_id);
-      mBtnMessage = (Button) root.findViewById(R.id.btn_send_message);
+      //mBtnMessage = (Button) root.findViewById(R.id.btn_send_message);
       if (mState != State.REGISTERED) {
-         mBtnMessage.setEnabled(false);
+         //mBtnMessage.setEnabled(false);
       }
       else {
          if (mState == State.REGISTERED) {
@@ -85,10 +99,10 @@ public class GcmDemoFragment extends DemoBaseFragment implements
             mTxtRegId.setText(getRegId());
             Log.i("test",getRegId());
          }
-         mBtnMessage.setOnClickListener(this);
+         //mBtnMessage.setOnClickListener(this);
       }
 
-      mTxtMsg = (TextView)root.findViewById(R.id.txt_message);
+      //mTxtMsg = (TextView)root.findViewById(R.id.txt_message);
       mTxtAccountName = (TextView)root.findViewById(R.id.txt_user_account);
       Button btnSelectAccount = (Button)root.findViewById(R.id.btn_select_account);
       btnSelectAccount.setOnClickListener(this);
@@ -120,7 +134,7 @@ public class GcmDemoFragment extends DemoBaseFragment implements
 
    @Override
    public void onResume() {
-      super.onResume();
+       super.onResume();
       EventBus.getDefault().register(this);
    }
 
@@ -148,7 +162,7 @@ public class GcmDemoFragment extends DemoBaseFragment implements
       Log.v("grokkingandroid", "onClick: " + view.getId());
       if (view.getId() == R.id.btn_register) {
          mBtnRegister.setEnabled(false);
-         mBtnMessage.setEnabled(false);
+         //mBtnMessage.setEnabled(false);
          switch (mState) {
          case REGISTERED:
             unregisterDevice();
@@ -160,9 +174,12 @@ public class GcmDemoFragment extends DemoBaseFragment implements
             Log.e("grokkingandroid", "click event on register button while it should be deactiviated");
             break;
          }
-      } else if (view.getId() == R.id.btn_send_message) {
+      }
+      /*else if (view.getId() == R.id.btn_send_message) {
          sendMessage();
-      } else if (view.getId() == R.id.btn_select_account) {
+      } */
+      else if (view.getId() == R.id.btn_select_account) {
+         Toast.makeText(getContext(), "Test", Toast.LENGTH_LONG).show();
          startAccountSelector();
       }
    }
@@ -222,7 +239,7 @@ public class GcmDemoFragment extends DemoBaseFragment implements
      * EventBus messages.
      */
    public void onEventMainThread(Bundle bundle) {
-      int typeOrdinal = bundle.getInt(Constants.KEY_EVENT_TYPE);
+       int typeOrdinal = bundle.getInt(Constants.KEY_EVENT_TYPE);
       EventbusMessageType type = EventbusMessageType.values()[typeOrdinal];
       switch (type) {
       case REGISTRATION_FAILED:
@@ -231,13 +248,13 @@ public class GcmDemoFragment extends DemoBaseFragment implements
       case REGISTRATION_SUCCEEDED:
          mBtnRegister.setText(R.string.btn_unregister);
          mBtnRegister.setEnabled(true);
-         mBtnMessage.setEnabled(true);
+         //mBtnMessage.setEnabled(true);
          mTxtRegId.setText(bundle.getString(Constants.KEY_REG_ID));
          mState = State.REGISTERED;
          break;
       case UNREGISTRATION_FAILED:
          mBtnRegister.setEnabled(true);
-         mBtnMessage.setEnabled(true);
+         //mBtnMessage.setEnabled(true);
          break;
       case UNREGISTRATION_SUCCEEDED:
          mBtnRegister.setText(R.string.btn_register);

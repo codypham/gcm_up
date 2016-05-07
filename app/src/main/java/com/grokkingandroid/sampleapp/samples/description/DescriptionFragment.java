@@ -40,13 +40,13 @@ public class DescriptionFragment extends Fragment {
       return f;
    }
 
-   @Override
+   /*@Override
    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-         Bundle savedInstanceState) {      
+         Bundle savedInstanceState) {
       ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_demo_description,
             container, false);
       mDescDelegate = new DescriptionDelegate();
-      mDescDelegate.addDescriptionAndLinks(inflater, 
+      mDescDelegate.addDescriptionAndLinks(inflater,
             rootView, 
             getResources(), 
             getArguments().getInt(BaseConstants.KEY_DESCRIPTION_ID),
@@ -54,7 +54,7 @@ public class DescriptionFragment extends Fragment {
             getArguments().getInt(BaseConstants.KEY_LINK_TARGETS_ID)
             );
       return rootView;
-   }
+   }*/
 
    @Override
    public void onResume() {

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      Copyright (C) 2013 Wolfram Rittmeyer
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,9 +15,8 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.grokkingandroid.sampleapp.samples.gcm"
-
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -28,45 +26,65 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <permission android:name="com.grokkingandroid.sampleapp.samples.notifications.gcm.permission.C2D_MESSAGE"
+
+    <permission
+        android:name="com.grokkingandroid.sampleapp.samples.notifications.gcm.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="com.grokkingandroid.sampleapp.samples.notifications.gcm.permission.C2D_MESSAGE" />
+
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/coupletones_icon"
         android:label="@string/gcm_demo_app_name"
         android:theme="@style/DemoAppTheme">
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
         <activity
-            android:name="com.grokkingandroid.sampleapp.samples.gcm.GCMDemoActivity"
-            android:label="@string/gcm_demo_title_activity_gcm_demo" >
+            android:name=".GCMDemoActivity"
+            android:label="@string/gcm_demo_title_activity_gcm_demo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
-                 <action android:name="com.grokkingandroid.sampleapp.ACTION_START" />
-                 <data android:scheme="app" android:host="grokkingandroid.com" android:path="/samples/gcm demo" />
-                 <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.grokkingandroid.sampleapp.ACTION_START" />
+
+                <data
+                    android:host="grokkingandroid.com"
+                    android:path="/samples/gcm demo"
+                    android:scheme="app" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.grokkingandroid.sampleapp.samples.description.DescriptionActivity"
             android:exported="false"
-            android:label="@string/gcm_demo_title_activity_description"/>
+            android:label="@string/gcm_demo_title_activity_description" />
+
         <receiver
             android:name=".GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
                 <category android:name="com.example.gcm" />
             </intent-filter>
         </receiver>
+
         <service android:name=".GcmIntentService" />
 
+        <activity
+            android:name="com.grokkingandroid.sampleapp.samples.AddFriend"
+            android:label="@string/title_activity_add_friend"></activity>
     </application>
 
 </manifest>

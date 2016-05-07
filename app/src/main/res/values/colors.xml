@@ -15,4 +15,6 @@
 -->
 <resources>
     <color name="holo_light_grey_solid">#ffebebeb</color>
+    <color name="colorPrimaryDark">#9d4747</color>
+    <color name="colorAccent">#9d4747</color>
 </resources>
