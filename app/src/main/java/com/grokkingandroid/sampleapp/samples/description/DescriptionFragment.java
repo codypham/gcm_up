@@ -40,21 +40,23 @@ public class DescriptionFragment extends Fragment {
       return f;
    }
 
-   /*@Override
+   @Override
    public View onCreateView(LayoutInflater inflater, ViewGroup container,
          Bundle savedInstanceState) {
-      ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_demo_description,
-            container, false);
-      mDescDelegate = new DescriptionDelegate();
+      //ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_demo_description,
+      //      container, false);
+      ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.container_content_gcm_demo,
+              container, false);
+      /*mDescDelegate = new DescriptionDelegate();
       mDescDelegate.addDescriptionAndLinks(inflater,
             rootView, 
             getResources(), 
             getArguments().getInt(BaseConstants.KEY_DESCRIPTION_ID),
             getArguments().getInt(BaseConstants.KEY_LINK_TEXTS_ID),
             getArguments().getInt(BaseConstants.KEY_LINK_TARGETS_ID)
-            );
+            );*/
       return rootView;
-   }*/
+   }
 
    @Override
    public void onResume() {

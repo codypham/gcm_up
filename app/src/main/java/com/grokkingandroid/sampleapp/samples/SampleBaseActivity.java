@@ -23,6 +23,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 
 import com.grokkingandroid.sampleapp.samples.about.AboutFragment;
 import com.grokkingandroid.sampleapp.samples.description.DescriptionActivity;
@@ -44,6 +45,8 @@ public abstract class SampleBaseActivity extends ActionBarActivity {
    protected void onCreate(Bundle icicle) {
       super.onCreate(icicle);
        getSupportActionBar().hide();
+      this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
    }
 
    @Override

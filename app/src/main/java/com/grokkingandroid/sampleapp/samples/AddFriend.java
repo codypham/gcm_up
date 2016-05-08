@@ -25,13 +25,14 @@ public class AddFriend extends Activity {
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Montserrat-Regular.otf");
 
         TextView title = (TextView) findViewById(R.id.id_label);
-        final EditText userId = (EditText) findViewById(R.id.txt_user_account);
+        EditText userId = (EditText) findViewById(R.id.txt_user_account);
         Button add = (Button) findViewById(R.id.add_id);
         Button map = (Button) findViewById(R.id.view_map);
 
         if(title != null) title.setTypeface(font);
         if(userId != null) userId.setTypeface(font);
         if(add != null) add.setTypeface(font);
+        if(map != null) map.setTypeface(font);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,4 +52,7 @@ public class AddFriend extends Activity {
         });
 
     }
+
+    @Override
+    public void onBackPressed() {}
 }
